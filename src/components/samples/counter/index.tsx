@@ -6,27 +6,6 @@ interface Props {
 }
 
 export default class Counter extends React.Component {
-  public CouterOperate: React.FC<Props> = props => {
-    const counterContainer = CounterContainer.useContainer()
-    const onClick = () => {
-      counterContainer.add(props.amount)
-    }
-    return <button onClick={onClick}>{props.amount}</button>
-  }
-
-  public CouterReset: React.FC = () => {
-    const counterContainer = CounterContainer.useContainer()
-    const onClick = () => {
-      counterContainer.reset()
-    }
-    return <button onClick={onClick}>Reset</button>
-  }
-
-  public CouterDisplay: React.FC = () => {
-    const counterContainer = CounterContainer.useContainer()
-    return <div>count : {counterContainer.count}</div>
-  }
-
   public render() {
     return (
       <CounterContainer.Provider>
@@ -39,5 +18,26 @@ export default class Counter extends React.Component {
         <this.CouterDisplay />
       </CounterContainer.Provider>
     )
+  }
+
+  private CouterOperate: React.FC<Props> = props => {
+    const counterContainer = CounterContainer.useContainer()
+    const onClick = () => {
+      counterContainer.add(props.amount)
+    }
+    return <button onClick={onClick}>{props.amount}</button>
+  }
+
+  private CouterReset: React.FC = () => {
+    const counterContainer = CounterContainer.useContainer()
+    const onClick = () => {
+      counterContainer.reset()
+    }
+    return <button onClick={onClick}>Reset</button>
+  }
+
+  private CouterDisplay: React.FC = () => {
+    const counterContainer = CounterContainer.useContainer()
+    return <div>count : {counterContainer.count}</div>
   }
 }

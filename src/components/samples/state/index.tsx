@@ -15,14 +15,31 @@ export default class StateSample extends React.Component<Props, State> {
       num: 0
     }
   }
+
   public render() {
     return (
       <div>
-        <button onClick={() => this.setState({ num: this.state.num + 1 })}>
-          Click({this.state.num})
-        </button>
-        <button onClick={() => this.setState({ num: 0 })}>Reset</button>
+        <this.addButtom />
+        <this.resetButtom />
       </div>
     )
+  }
+
+  private addButtom: React.FC = () => {
+    return (
+      <button onClick={() => this.setState({ num: this.state.num + 1 })}>
+        Click({this.state.num})
+      </button>
+    )
+  }
+
+  private resetButtom: React.FC = () => {
+    return <button onClick={() => this.valCheck()}>Reset</button>
+  }
+
+  private valCheck = () => {
+    this.state.num === 0
+      ? alert(`this.state.num is ${this.state.num}`)
+      : this.setState({ num: 0 })
   }
 }
