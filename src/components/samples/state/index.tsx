@@ -30,7 +30,9 @@ export default class StateSample extends React.Component<Props, State> {
 
   private addButtom: React.FC = () => {
     return (
-      <button onClick={() => this.setState({ num: this.state.num + 1 })}>
+      <button
+        onClick={() => this.setState({ num: this.increment(this.state.num) })}
+      >
         Click({this.state.num})
       </button>
     )
@@ -44,5 +46,9 @@ export default class StateSample extends React.Component<Props, State> {
     this.state.num === 0
       ? alert(`this.state.num is ${this.state.num}`)
       : this.setState({ num: 0 })
+  }
+
+  private increment = (i: number): number => {
+    return ++i
   }
 }
