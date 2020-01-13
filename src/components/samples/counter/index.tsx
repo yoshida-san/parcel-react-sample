@@ -1,4 +1,5 @@
 import React from 'react'
+import ChildComponent from './child'
 import { CounterContainer } from './container'
 
 interface Props {
@@ -11,14 +12,14 @@ interface Props {
 export default class Counter extends React.Component {
   public render() {
     return (
+      // Providerで括った範囲内でContainerのデータが扱える
       <CounterContainer.Provider>
         <h1>Use unstated-next</h1>
         <this.CouterOperate amount={1} />
         <this.CouterOperate amount={10} />
         <this.CouterOperate amount={-1} />
         <this.CouterReset />
-        <this.CouterDisplay />
-        <this.CouterDisplay />
+        <ChildComponent />
       </CounterContainer.Provider>
     )
   }
@@ -37,10 +38,5 @@ export default class Counter extends React.Component {
       counterContainer.reset()
     }
     return <button onClick={onClick}>Reset</button>
-  }
-
-  private CouterDisplay: React.FC = () => {
-    const counterContainer = CounterContainer.useContainer()
-    return <div>count : {counterContainer.count}</div>
   }
 }
