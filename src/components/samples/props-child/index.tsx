@@ -8,6 +8,9 @@ interface Props {
 // tslint:disable-next-line:no-empty-interface
 interface State {}
 
+/**
+ * Class Component
+ */
 export default class PropsChild extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)

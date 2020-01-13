@@ -8,6 +8,9 @@ interface State {
   num: number
 }
 
+/**
+ * Class Component
+ */
 export default class StateSample extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)

@@ -5,6 +5,9 @@ interface Props {
   amount: number
 }
 
+/**
+ * Class Component
+ */
 export default class Counter extends React.Component {
   public render() {
     return (
