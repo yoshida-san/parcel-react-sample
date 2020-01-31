@@ -5,7 +5,9 @@ const useCountContainer = () => {
   const [count, setCount] = useState<number>(0)
 
   const add = (amount: number) => {
-    setCount(i => i + amount)
+    setCount((i: number): number => {
+      return i + amount
+    })
   }
 
   const reset = () => {
