@@ -6,6 +6,7 @@ import Props from './components/samples/props-parent'
 import Simple from './components/samples/simple'
 import State from './components/samples/state'
 import Navbar from './navbar'
+import { GlobalContainer } from './components/samples/globalContainer'
 
 class App extends Component {
   public render() {
@@ -14,12 +15,14 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
-            <Route exact path="/" component={Simple} />
-            <Route exact path="/Props" component={Props} />
-            <Route exact path="/State" component={State} />
-            <Route exact path="/Api" component={Api} />
-            <Route exact path="/Counter" component={Counter} />
-            <Route component={() => <Redirect to="/" />} />
+            <GlobalContainer.Provider>
+              <Route exact path="/" component={Simple} />
+              <Route exact path="/Props" component={Props} />
+              <Route exact path="/State" component={State} />
+              <Route exact path="/Api" component={Api} />
+              <Route exact path="/Counter" component={Counter} />
+              <Route component={() => <Redirect to="/" />} />
+            </GlobalContainer.Provider>
           </div>
         </Router>
       </div>
