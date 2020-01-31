@@ -15,19 +15,39 @@ export default class Counter extends React.Component {
       // Providerで括った範囲内でContainerのデータが扱える
       <CounterContainer.Provider>
         <h1>Use unstated-next</h1>
-        <this.CouterOperate amount={1} />
-        <this.CouterOperate amount={10} />
-        <this.CouterOperate amount={-1} />
+        Add:
+        <this.CouterAdd amount={1} />
+        <this.CouterAdd amount={10} />
+        <this.CouterAdd amount={-1} />
+        <br />
+        Multiplication:
+        <this.CouterMultiplication amount={3} />
+        <this.CouterMultiplication amount={2} />
+        <this.CouterMultiplication amount={1} />
+        <this.CouterMultiplication amount={0} />
+        <this.CouterMultiplication amount={-1} />
+        <this.CouterMultiplication amount={-2} />
+        <this.CouterMultiplication amount={-3} />
+        <br />
+        <br />
         <this.CouterReset />
         <ChildComponent />
       </CounterContainer.Provider>
     )
   }
 
-  private CouterOperate: React.FC<Props> = props => {
+  private CouterAdd: React.FC<Props> = props => {
     const counterContainer = CounterContainer.useContainer()
     const onClick = () => {
       counterContainer.add(props.amount)
+    }
+    return <button onClick={onClick}>{props.amount}</button>
+  }
+
+  private CouterMultiplication: React.FC<Props> = props => {
+    const counterContainer = CounterContainer.useContainer()
+    const onClick = () => {
+      counterContainer.multiplication(props.amount)
     }
     return <button onClick={onClick}>{props.amount}</button>
   }

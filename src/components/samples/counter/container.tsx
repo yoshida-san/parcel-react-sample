@@ -10,11 +10,17 @@ const useCountContainer = () => {
     })
   }
 
+  const multiplication = (amount: number) => {
+    setCount((i: number): number => {
+      return i * amount
+    })
+  }
+
   const reset = () => {
     setCount(0)
   }
 
-  return { count, add, reset }
+  return { count, add, multiplication, reset }
 }
 
 export const CounterContainer = createContainer(useCountContainer)
