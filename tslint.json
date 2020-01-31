@@ -4,7 +4,8 @@
   "jsRules": {},
   "rules": {
     "semicolon": [false, "never"],
-    "interface-name": [false]
+    "interface-name": [false],
+    "ordered-imports": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"]
 }
