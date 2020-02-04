@@ -1,0 +1,14 @@
+$green: rgb(40, 241, 0);
+$blue: rgb(0, 162, 255);
+
+// local styles
+.hoge {
+  color: $green;
+}
+
+// global styles
+:global {
+  .hoge {
+    color: $blue;
+  }
+}

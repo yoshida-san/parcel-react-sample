@@ -31,6 +31,7 @@ export default class Api extends React.Component<Props, State> {
   public render() {
     return (
       <div className="app">
+        <h1 className="hoge">API(use global styles: .hoge)</h1>
         <input
           type="text"
           value={this.state.keyword}
