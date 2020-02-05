@@ -5,7 +5,7 @@ import Counter from './components/samples/counter/index'
 import Props from './components/samples/props-parent'
 import Simple from './components/samples/simple'
 import State from './components/samples/state'
-import Navbar from './mynavbar'
+import Navbar from './myNavbar'
 import { GlobalContainer } from './components/samples/globalContainer'
 
 class App extends Component {
