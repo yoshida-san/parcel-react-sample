@@ -8,7 +8,10 @@ $blue: rgb(0, 162, 255);
 
 // global styles
 :global {
-  .hoge {
-    color: $blue;
+  body {
+    padding: 10px;
+    .hoge {
+      color: $blue;
+    }
   }
 }
