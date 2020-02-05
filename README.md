@@ -2,6 +2,7 @@
 
 react を学習する時の最小構成（学習コストが低い）のセット。sass や scss を使わずに postcss+css modules で十分な気がしてる。
 
+- Docker, docker-compose
 - TypeScript
 - Parcel
 - TSLint + Prettir
@@ -10,16 +11,13 @@ react を学習する時の最小構成（学習コストが低い）のセッ�
 - css modules
 - postcss
 
-## install
-
-```
-~$ npm install
-```
-
 ## run
 
 ```
-~$ npm run start
+~$ docker build -t parcel-react-sample .
+~$ docker-compose up
+~$ docker-compose run --service-port node bash
+~# npm run start
 ```
 
 access to `http://localhost:1234`
