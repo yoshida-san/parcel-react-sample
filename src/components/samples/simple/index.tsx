@@ -15,8 +15,6 @@ const simpleComponent = () => {
     </>
   )
   return element
-  // or
-  // return <h1>simpleComponent !!</h1>
 }
 
 export = simpleComponent
